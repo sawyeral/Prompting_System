@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.nonlinearsystemflowsetup.NavToItemVideo">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/navtoitemvideo_video" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Navigate To Item - Video Prompt" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="No Arrival"
+        android:id="@+id/button_navtoitemvideo_noarrival_callforhelp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:onClick="navToItemVideoPrompt"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Help"
+        android:id="@+id/button_navtoitemvideo_callforhelp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="48dp"
+        android:onClick="navToItemVideoToCallForHelp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Arrival"
+        android:id="@+id/button_navtoitemvideo_scanitem"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="48dp"
+        android:onClick="navToItemVideoToScanItem"
+        />
+
+</RelativeLayout>
