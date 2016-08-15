@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Video view for Video Prompt -->
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,11 +12,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/scanitem_video" />
 
+    <!-- Test to indicate this is Scan Item Video Prompt - for development and testing use only -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Scan Item - Video Prompt"/>
 
+    <!-- Button to indicate no action - Replay prompt, or Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -27,6 +30,7 @@
         android:layout_marginTop="8dp"
         android:onClick="itemScanVideoNoAction"/>
 
+    <!-- Button to indicate Too Many Items Scanned - Replay prompt, or Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -37,6 +41,7 @@
         android:layout_marginTop="8dp"
         android:onClick="itemScanVideoTooMany"/>
 
+    <!-- Button to indicate Wrong Item Scanned - Replay prompt, or Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -47,6 +52,7 @@
         android:layout_marginTop="8dp"
         android:onClick="itemScanVideoWrongItem"/>
 
+    <!-- Button to indicate Correct action - Redirect to Nav to Item, or Redirect to Nav to Ship -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -57,6 +63,7 @@
         android:layout_marginTop="8dp"
         android:onClick="itemScanVideoCorrectNumber"/>
 
+    <!-- Button to Call for Help - Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"

@@ -22,6 +22,7 @@
         <activity android:name=".NavToShip" ></activity>
         <activity android:name=".PlaceBox" ></activity>
         <activity android:name=".ScanItemShip" ></activity>
+        <activity android:name=".ScanShelf" ></activity>
 
     </application>
 

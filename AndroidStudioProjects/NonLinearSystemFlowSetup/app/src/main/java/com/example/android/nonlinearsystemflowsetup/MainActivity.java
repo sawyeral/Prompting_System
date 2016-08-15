@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    int itemNumber = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentMainToNavItemPhoto = new Intent(getApplicationContext(),NavToItem.class);
+                intentMainToNavItemPhoto.putExtra("item-number", itemNumber);
                 startActivity(intentMainToNavItemPhoto);
             }
         });
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentMainToCallForHelp = new Intent(getApplicationContext(),CallForHelp.class);
+                intentMainToCallForHelp.putExtra("item-number", itemNumber);
                 startActivity(intentMainToCallForHelp);
             }
         });

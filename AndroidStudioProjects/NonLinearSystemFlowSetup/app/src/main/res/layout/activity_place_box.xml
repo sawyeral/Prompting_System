@@ -4,19 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Image view for photo prompt -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:src="@drawable/placebox_photo_sample"
         android:layout_marginBottom="115dp"
         />
 
+    <!-- Text to indicate that this is Place Box Photo Prompt - for creation and testing use only -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Place Box - Photo Prompt"/>
 
+    <!-- Button to indicate no action - Replay prompt, or Redirect to Video Prompt -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -28,6 +30,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxNoAction"/>
 
+    <!-- Button to indicated user has placed too many items - Replay prompt, or Redirect to Video Prompt -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -38,6 +41,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxTooMany"/>
 
+    <!-- Button to indicate user has placed wrong item - Replay prompt, or Redirect to Video Prompt -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -48,6 +52,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxWrongItem"/>
 
+    <!-- Button to indicate user has placed item correctly - Redirect to Scan Item Ship -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -58,6 +63,7 @@
         android:layout_marginTop="8dp"
         />
 
+    <!-- Button to Call for Help - Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Video View for Video Prompt -->
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,11 +12,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/placebox_video" />
 
+    <!-- Text to indicate this is Place Box Video Prompt -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Place Box - Video Prompt"/>
 
+    <!-- Button to indicate no action - Replay prompt, or Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -27,6 +30,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxVideoNoAction"/>
 
+    <!-- Button to indicate too many items placed - Replay prompt, or Redirect to Call for Help-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -37,6 +41,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxVideoTooMany"/>
 
+    <!-- Button to indicate wrong item has been placed - Replay prompt, or Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -47,6 +52,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxVideoWrongItem"/>
 
+    <!-- Button to indicate correct item has been placed - Redirect to Scan Item Ship -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -57,6 +63,7 @@
         android:layout_marginTop="8dp"
         android:onClick="placeBoxVideoCorrectNumber"/>
 
+    <!--Button to Call for Help - Redirect to Call for Help -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="48dp"

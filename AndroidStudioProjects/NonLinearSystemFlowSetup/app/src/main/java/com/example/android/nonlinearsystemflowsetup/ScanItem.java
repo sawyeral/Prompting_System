@@ -7,27 +7,51 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 public class ScanItem extends AppCompatActivity {
 
     int counterAttemptsPhoto = 1;
-    int counterAttemptsVideo = 0;
+    int counterAttemptsVideo = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_item);
 
-        // Switch from 'Scan Item - Photo Prompt' to 'Navigate to Shipping'
-        Button buttonScanItemToNavToShip = (Button) findViewById(R.id.button_scanitemphoto_correctnumber_navtoship);
-        buttonScanItemToNavToShip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentScanItemToNavToShip = new Intent(getApplicationContext(),NavToShip.class);
-                startActivity(intentScanItemToNavToShip);
-            }
-        });
+        // Pull item number
+        int itemNumber = getIntent().getIntExtra("item-number",1);
+
+        // Display item Number
+        TextView itemNumberView = (TextView) findViewById(R.id.scanitemphoto_displayitemnumber);
+        itemNumberView.setText(String.valueOf(itemNumber));
+
+        if (itemNumber < 3) {
+            // Switch from 'Scan Item - Photo Prompt' to 'Navigate to Shipping'
+            itemNumber = itemNumber+1;
+            final int itemNumberCurrent = itemNumber;
+            Button buttonScanItemToNavToShip = (Button) findViewById(R.id.button_scanitemphoto_correctnumber_navtoship);
+            buttonScanItemToNavToShip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intentScanItemToNavToShip = new Intent(getApplicationContext(), NavToItem.class);
+                    intentScanItemToNavToShip.putExtra("item-number", itemNumberCurrent);
+                    startActivity(intentScanItemToNavToShip);
+                }
+            });
+        }else{
+            // Switch from 'Scan Item - Photo Prompt' to 'Navigate to Item - Photo'
+            Button buttonScanItemToNavToShip = (Button) findViewById(R.id.button_scanitemphoto_correctnumber_navtoship);
+            buttonScanItemToNavToShip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intentScanItemToNavToItem = new Intent(getApplicationContext(), NavToShip.class);
+                    startActivity(intentScanItemToNavToItem);
+                }
+            });
+        };
+
 
         // Switch from 'Scan Item - Photo Prompt' to 'Call for Help'
         Button buttonScanItemToCallForHelp = (Button) findViewById(R.id.button_scanitemphoto_callforhelp);

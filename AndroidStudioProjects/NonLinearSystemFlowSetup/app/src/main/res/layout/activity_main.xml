@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.nonlinearsystemflowsetup.MainActivity">
 
-
+<!-- Text showing screen is main menu -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,6 +20,7 @@
         android:layout_centerVertical="true"
         android:text="Main Menu" />
 
+<!-- Button to begin navigation prompt to first item -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +29,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <!-- Button to Call for Help - Redirect to Call For Help Screen -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

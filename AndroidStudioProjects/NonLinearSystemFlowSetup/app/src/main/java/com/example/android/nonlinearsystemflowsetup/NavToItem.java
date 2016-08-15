@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.media.MediaPlayer;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import static com.example.android.nonlinearsystemflowsetup.R.*;
@@ -17,12 +18,23 @@ import static com.example.android.nonlinearsystemflowsetup.R.*;
 public class NavToItem extends AppCompatActivity {
 
     int counterNavToItemPhoto = 1;
-    int counterNavToItemVideo = 0;
+    int counterNavToItemVideo = 1;
+    //public int itemNumber= getIntent().getIntExtra("item-number",1);
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {// was protected
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_nav_to_item_photo);
+
+
+        // Pulling Item Number
+       int itemNumber = getIntent().getIntExtra("item-number",1);
+       final int itemNumberCurrentNavToItem = itemNumber;
+
+
+//         Displaying the item number on the screen
+        TextView itemNumberView = (TextView) findViewById(id.navtoitemphoto_itemnumberdisplay);
+        itemNumberView.setText(String.valueOf(itemNumberCurrentNavToItem));
 
         // Switch from 'Navigate to Item - Photo Prompt" to "Call for Help"
         Button buttonNavToItemToCallForHelp = (Button) findViewById(id.button_navtoitemphoto_callforhelp);
@@ -34,13 +46,16 @@ public class NavToItem extends AppCompatActivity {
             }
         });
 
-        // Switch from 'Navigate to Item - Photo Prompt' to 'Scan Item'
-        Button buttonNavToItemToScanItem = (Button) findViewById(id.button_navtoitemphoto_arrival_scanitem);
-        buttonNavToItemToScanItem.setOnClickListener(new View.OnClickListener() {
+
+        // Switch from 'Navigate to Item - Photo Prompt' to 'Scan Shelf'
+        Button buttonNavToItemToScanShelf = (Button) findViewById(id.button_navtoitemphoto_arrival_scanshelf);
+        buttonNavToItemToScanShelf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentNavToItemToScanItem = new Intent(getApplicationContext(), ScanItem.class);
-                startActivity(intentNavToItemToScanItem);
+//                int itemNumber = itemNumber;
+                Intent intentNavToItemToScanShelf = new Intent(getApplicationContext(), ScanShelf.class);
+                intentNavToItemToScanShelf.putExtra("item-number", itemNumberCurrentNavToItem);
+                startActivity(intentNavToItemToScanShelf);
             }
         });
 
